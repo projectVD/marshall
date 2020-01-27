@@ -1,0 +1,66 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $main-fonts;
+    font-weight: 400;
+    font-size: 24px;
+    background-color: $back-color;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+.container {
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.main-title {
+    font-family: $title-fonts;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 100px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $title-color;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-block;
+    padding: 24px 42px;
+    font-family: $title-fonts;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $btn-text;
+    background-color: $button-color;
+    &:hover {
+        background-color: $button-hover;
+        transition: all .2s;
+    }
+}
+
+.prise {
+    font-family: $title-fonts;
+    font-weight: 400;
+}
