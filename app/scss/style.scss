@@ -15,10 +15,18 @@
     background-color: $back-color;
     .container {
         @include flex;
+        
     }
 }
 
+.logo {
+    z-index: 10;
+}
 // Header menu
+.nav {
+    
+    
+}
 .main-menu {
     @include flex;
     width: 100%;
@@ -32,7 +40,6 @@
         }
     }
 }
-
 
 // Main screen (firs screen) START
 .main-screen {
@@ -268,6 +275,119 @@
     }
 }
 
+// Form 
+.form-screen {
+    display: none;
+    width: 65%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    color: $form-text-color;
+    background-color: $form-color;
+    &__inner {
+        @include flex;
+        padding: 70px;
+    }
+    &__item {
+        width: 45%;
+    }
+    &__img {
+        width: 85%;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    &__adv {
+        margin-top: 35px;
+        @include flex;
+        align-items: flex-start;
+    }
+}
+
+.form-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    &__inner {
+        width: 25px;
+        height: 25px;
+        position: relative;
+    }
+    span {
+        @include form-btn;
+        height: 0;
+        &::before, &::after {
+            content: '';
+            @include form-btn;
+            margin-left: -50%;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.adv__item {
+    max-width: 120px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.product {
+    &__title {
+        font-family: $title-fonts;
+        font-size: 40px;
+        line-height: 1.2;
+        color: $title-form-color;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+    &__subtitle {
+        margin-top: 12px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+.product-form {
+    margin-top: 12px;
+    input {
+        width: 100%;
+        margin-top: 18px;
+        padding: 10px 8px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #8B8893;
+        border: 2px solid $back-color;
+        background-color: transparent;
+        outline: none;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.product-prise {
+    margin-top: 22px;
+    font-size: 24px;
+    line-height: 41px;
+    letter-spacing: 0.008em;
+    span {
+        font-family: $title-fonts;
+    }
+}
 
 
 @import "media";

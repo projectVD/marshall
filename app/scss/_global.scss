@@ -64,3 +64,40 @@ h1, h2, h3, h4 {
     font-family: $title-fonts;
     font-weight: 400;
 }
+
+.burger {
+    display: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    span {
+        // margin-left: -25px;
+        @include burger-lines;
+        &::before, &::after {
+            content: '';
+            @include burger-lines;
+            transition: .2s;
+        }
+        &::before {
+            transform: translateY(-6px);
+        } 
+        &::after {
+            transform: translateY(6px);
+        }
+    }
+}
+
+.burger-active {
+    span {
+        height: 0;
+    }
+    span::before {
+        transform: rotate(-45deg);
+    }
+    span::after {
+        transform: rotate(45deg);
+    }
+}
+

@@ -10,3 +10,22 @@
     flex-direction: column;
     align-items: center;
 }
+
+@mixin burger-lines {
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    height: 2px;
+    background-color: $btn-text;   
+    margin-top: -1px;
+}
+
+@mixin form-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 2px;
+    background-color: $back-color;
+    top: 50%;
+}

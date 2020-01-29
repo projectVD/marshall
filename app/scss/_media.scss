@@ -143,7 +143,35 @@
             line-height: 20px;
         }
     }
+
+    // Form 
+    .form-screen {
+        &__inner {
+            padding: 40px;
+        }
+    }
+
+    .form-btn {
+        top: 10px;
+        right: 10px;
+    }
+
+    .product-form {
+        input {
+            width: 95%;
+            margin-top: 12px;
+            padding: 8px 6px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    // Form END
+
 }
+
+
+
+
 
 @media screen and(max-width: 1024px ) { 
 
@@ -250,6 +278,22 @@
         }
     }
     // Buy END
+
+    // Form 
+    .form-screen {
+        &__inner {
+            @include center-block;
+        }
+        &__item {
+            width: 100%;
+        }
+        &__item:first-child {
+            display: none;
+        }
+    }
+    // Form END
+
+
 }
 
 @media screen and(max-width: 667px ) { 
@@ -266,14 +310,63 @@
 
     // Header
     .head {
+        height: auto;
         padding: 16px 0;
+        position: relative;
+
     }
 
     // Header menu
-    .main-menu {
-        display: none;
+
+    .burger {
+        display: block;
     }
 
+    .nav {
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .main-menu {
+        width: inherit;
+        padding: 10px 0;
+        background-color: $back-color;
+        @include center-block;
+        transform: translateY(-500px);
+        transition: all 0.5s ease-in;
+        z-index: 5;
+        &__item {
+            width: 100%;
+            margin-left: 0;
+            font-size: 30px;
+            line-height: 35px;
+            font-weight: 700;
+            padding: 15px 0;
+            text-align: center;
+            transition: all 0.5s ease
+            a {
+                color: $menu-color;
+                transition: all 0.5s ease;
+            }
+            &:hover {
+                a {
+                    color: $btn-text;
+                }
+                
+            }
+        }
+    }
+
+    .menu-active {
+        transition: all 0.5s ease-out;
+        transform: translateY(0);
+    }
+    
     .logo__img {
         width: 35%;
     }
@@ -356,7 +449,7 @@
     }
 }
 
-@media screen and(max-width: 375px ) { 
+@media screen and (max-width: 411px ) and (min-width: 320px) { 
 
     //global 
 
@@ -370,9 +463,11 @@
     }
 
     // Header menu
-    .main-menu {
-        display: none;
+    .nav {
+        
     }
+
+    
 
     // Main screen (firs screen) START
     .main-screen {
